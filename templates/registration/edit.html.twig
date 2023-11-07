@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+{% block title %}Register{% endblock %}
+
+{% block body %}
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/animate.css">
+
+<link rel="stylesheet" type="text/css" href="css/hamburgers.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/select2.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/util.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta name="robots" content="noindex, follow">
+<script nonce="22d4f1e7-d340-4e90-8588-2c1bd65fc960">(function(w,d){!function(Y,Z,_,ba){Y[_]=Y[_]||{};Y[_].executed=[];Y.zaraz={deferred:[],listeners:[]};Y.zaraz.q=[];Y.zaraz._f=function(bb){return function(){var bc=Array.prototype.slice.call(arguments);Y.zaraz.q.push({m:bb,a:bc})}};for(const bd of["track","set","debug"])Y.zaraz[bd]=Y.zaraz._f(bd);Y.zaraz.init=()=>{var be=Z.getElementsByTagName(ba)[0],bf=Z.createElement(ba),bg=Z.getElementsByTagName("title")[0];bg&&(Y[_].t=Z.getElementsByTagName("title")[0].text);Y[_].x=Math.random();Y[_].w=Y.screen.width;Y[_].h=Y.screen.height;Y[_].j=Y.innerHeight;Y[_].e=Y.innerWidth;Y[_].l=Y.location.href;Y[_].r=Z.referrer;Y[_].k=Y.screen.colorDepth;Y[_].n=Z.characterSet;Y[_].o=(new Date).getTimezoneOffset();if(Y.dataLayer)for(const bk of Object.entries(Object.entries(dataLayer).reduce(((bl,bm)=>({...bl[1],...bm[1]})),{})))zaraz.set(bk[0],bk[1],{scope:"page"});Y[_].q=[];for(;Y.zaraz.q.length;){const bn=Y.zaraz.q.shift();Y[_].q.push(bn)}bf.defer=!0;for(const bo of[localStorage,sessionStorage])Object.keys(bo||{}).filter((bq=>bq.startsWith("_zaraz_"))).forEach((bp=>{try{Y[_]["z_"+bp.slice(7)]=JSON.parse(bo.getItem(bp))}catch{Y[_]["z_"+bp.slice(7)]=bo.getItem(bp)}}));bf.referrerPolicy="origin";bf.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(Y[_])));be.parentNode.insertBefore(bf,be)};["complete","interactive"].includes(Z.readyState)?zaraz.init():Y.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>
+<body>
+<div class="contact1">
+<div class="container-contact1">
+<div class="contact1-pic js-tilt" data-tilt>
+<img style="width:600px;height:500px;"src="img/pa2.png" alt="IMG">
+</div>
+<div class="contact1-form validate-form">
+    {{ form_start(form) }}
+    <span class="contact1-form-title">
+Please sign in
+<img   style="width:90px;height:70px;"src="img/pa11.png" alt="IMG">
+</span>
+<div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+
+        {{ form_row(form.email ,{'attr':{'class':'input1'}}) }}
+        </div>
+        <div class="wrap-input1 validate-input" >
+
+        {{ form_row(form.plainPassword, {'attr':{'class':'input1',' label': 'Password' }}) }}
+         </div>
+        
+
+        {{ form_row(form.agreeTerms) }}
+
+       
+     
+      {{ form_row(form.roles, { 'attr': {'class': 'form-control checkbox'} }) }}
+
+
+ <div class="container-contact1-form-btn">
+<button class="contact1-form-btn" type="submit">
+<span>
+Edit
+<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+</span>
+</button>
+</div>
+       
+    {{ form_end(form) }}
+    </div>
+</div>
+
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
+<script src="vendor/bootstrap/js/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="vendor/select2/select2.min.js"></script>
+
+<script src="vendor/tilt/tilt.jquery.min.js"></script>
+<script>
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+<script src="js/main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7d29228f8cc51ba1","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.4.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
+{% endblock %}
+

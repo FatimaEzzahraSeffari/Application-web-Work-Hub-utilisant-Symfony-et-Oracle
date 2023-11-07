@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ConfirmationController!{% endblock %}
+
+{% block body %}
+
+<style>
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 50px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    }
+    
+    p {
+      font-size: 1.2em;
+      line-height: 1.5em;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .btn:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+  <div class="login-box"   style="margin: 100px;" >    
+    <form method="post" action="{{ path('app_apply_delete', { 'id': users.id }) }}">
+  <h2  style="font-size: 25px; color:white;">Confirm Delete Annonce</h2>
+  <h2>Are you sure you want to delete the apply user  "{{ users.fullName }}"?</h2>
+  <center>
+      <button type="submit" class="btn btn-danger">Yes</button>
+      <button><a href="{{ path('app_applyshow') }}" class="btn btn-default">No</a></button>
+  </center>
+
+  </form>
+</div>
+
+{% endblock %}

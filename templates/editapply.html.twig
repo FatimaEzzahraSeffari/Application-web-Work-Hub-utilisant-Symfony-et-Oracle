@@ -1,0 +1,102 @@
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ asset('css/contact.css') }}">
+  <style>
+ 
+  .job-card-header {
+    position: relative;
+    margin-right: 10px;
+    width: 50px; /* Adjust the width as needed */
+  }
+
+  .job-card-header img {
+    width: 100%;
+    height: auto;
+  }
+
+  .menu-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+background-color:#2e2882;  }
+
+  .job-card-title {
+    font-weight: bold;
+  }
+</style>
+
+
+   
+<img style="width:120px;height:80px; " src="../img/logo.png" alt=" Logo"> 
+
+ <style>
+    .header-menu {
+        position: relative;
+        top: -50px;
+        left:50%;
+    }
+
+    .header-menu a {
+        text-decoration: none;
+    }
+
+    .header-menu a:hover {
+        text-decoration: underline;
+        text-decoration-color: #4eb910;
+        font-weight: bold;
+        font-size: 20px;
+    }
+</style>
+<div class="header-menu">
+    <a href="/home" style="color:black;font-weight: bold;">Home<span class="underline" ></span></a>
+    &nbsp; &nbsp; 
+    <a href="/announce" style="color:black;font-weight: bold;">Announcement<span class="underline"></span></a>
+    &nbsp; &nbsp; 
+    <a href="/aboutus" style="color:black;font-weight: bold;">About<span class="underline"></span></a>
+    &nbsp; &nbsp; 
+    <a href="/contact" style="color:black;font-weight: bold;">Contact<span class="underline"></span></a>
+    &nbsp; 
+    <a href="/login" style="color:black;font-weight: bold;">Login<span class="underline"></span></a>
+    &nbsp; 
+    <a href="/register" style="color:black;font-weight: bold;">Register<span class="underline"></span></a>
+    &nbsp; 
+</div>
+<div class="container" style=" height: 700px;" >
+	<div class="map">
+		<img src="../img/yes.jpg" width="120%" height="700px" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>
+    {{ form_start(form) }}
+	<div class="contact-form"  >
+
+	<center>	<h1 class="title">Apply for a Job</h1></center>
+		
+		<form action="" >
+   
+      
+    
+
+    
+   
+          
+        {{ form_widget(form.fullName ,{'attr': {'placeholder': 'Enter your fullName','style': 'padding:10px;'}}) }}
+       
+        {{ form_widget(form.phoneNumber,{'attr': {'placeholder': 'Enter your phoneNumber','style': 'padding:10px;'}}) }}
+     
+        {{ form_widget(form.email,{'attr': {'placeholder': 'Enter your email','style': 'padding:10px;'}}) }}
+        
+        {{ form_widget(form.cv,{'attr': {'placeholder': 'Enter your cv','style': 'padding:10px;'}}) }}
+      
+        {{ form_widget(form.coverLetter,{'attr': {'placeholder': 'Enter your coverLetter','style': 'padding:10px;'}}) }}
+     
+        {{ form_widget(form.skills,{'attr': {'placeholder': 'Enter your skills','style': 'padding:10px;'}}) }}
+       
+          
+        {# Add other fields as needed #}
+
+       <center>
+        <button type="submit" class="btn-send"style="background-color:#4eb910;">Edit</button>
+       </center>  
+    {{ form_end(form) }}
+{% endblock %}

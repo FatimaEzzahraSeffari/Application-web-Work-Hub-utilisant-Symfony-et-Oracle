@@ -1,0 +1,30 @@
+{% for category in categories %}
+     <a href="{{ path('app_show', { 'category': category.name }) }}" class="link" style="margin:1%;">{{ category.name }}</a>
+    {% endfor %}
+    <a href="{{ path('app_show') }}"  class="link" style="margin:1%"> All</a>
+<br>
+<br>
+<br>
+
+  <h2><strong>All movies with books <span></span> (The best for you)</strong></h2>   
+
+     {% for post in posts %}       
+
+     
+  <div class="cards" style="display: inline-block;">              
+
+    <figure class="card">
+
+    <img src="{{ post.backgroundImage }}" />
+    
+        <img src="{{ post.profileImage }}" />
+
+
+      <figcaption>{{ post.title }}
+<br>
+<br>
+
+         
+  </div>
+    {% endfor %}
+</div>   

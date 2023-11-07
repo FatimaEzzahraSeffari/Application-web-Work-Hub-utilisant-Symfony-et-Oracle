@@ -1,0 +1,106 @@
+{% block content %}
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+}
+th {
+    background-color:black;
+    color:white;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="css/admin.css">
+<div id="nav" class="nav">
+            <div class="icon">
+                <ul>
+                    <li><a title="Home" href="#"><i class="fa fa-home "></i></a></li>
+                    <li><a href="About"><i class="fa fa-search "></i></a></li>
+                    <li><a href="#"><i class="fa fa-edit "></i></a></li>
+                    <li><a href="#"><i class="fa fa-cog "></i></a></li>
+        
+                </ul>
+            </div>
+            <div class="text">
+                <ul>
+                    <li><a title="Home" href="/home">Go To Home</a></li>
+                    <li><a href="/showuser">Users</a>
+                    </li>
+                    <li><a href="/Applyshow">Apply Users</a>
+                    </li>
+                    <li><a href="/showannounce">Announce</a>
+                    </li>
+                   <li><a href="/Addannounce">Add Announce</a>
+                    </li>
+                    
+
+                </ul>
+            </div>
+            <div class="info">
+                <div class="logo" >
+                 <img style="width:100px;height:100px;" src="../img/logo.png">                </div>
+                <div class="name" style="color:white">WorkHub</div>
+                <div class="quote"></div>
+                <div class="social">
+                    <a target="_blank" href="https://twitter.com/tmrDevelops"><i class="fa fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+<center>
+    <h1>Announce Table</h1>
+
+    <table style="margin-left:50px;">
+        <thead>
+            <tr>
+                 <th>Title</th>
+                <th>BackgroundImage</th>
+                <th>ProfileImage</th>
+                <th>Overview</th>
+                <th>Description</th>
+                 <th>Experience</th>
+                  <th>WorkLevel</th>
+                   <th>Salary</th>
+                    <th>Category</th>
+                    <th colspan=4>Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+                <tr>
+                 <td>{{ post.title}}</td>
+                    <td> <img src="{{ post.backgroundImage }}" style="width:80px;height:50px;" /></td>
+                    <td>      <img src="{{ post.profileImage }}" style="width:80px;height:50px;" /></td>
+                    
+                    <td>{{ post.overview}}</td>
+                    <td>{{ post.description }}</td>
+                    
+                    <td>{{ post.experience}}</td>
+                    <td>{{ post.workLevel }}</td>
+                    
+                    <td>{{ post.salary}}</td>
+                    <td>{{ post.category.name }}</td>
+                    
+                    
+<td><a href={{path('app_annonce_edit',{id:post.id})}}><input class="btn draw-border" type="button" value="edit"style="width:80px;height:30px;background-color:green;color:white;font-size:15px;"></a> <br><br>
+                <a href={{path('app_annonce_delete',{id:post.id})}}><input class="btn draw-border" type="button" value="delete"style="width:80px;height:30px;background-color:red;color:white;font-size:15px;"></a>
+                </td>
+
+
+                    
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+     </center>
+{% endblock %}
